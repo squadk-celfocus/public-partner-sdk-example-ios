@@ -24,7 +24,7 @@ curl -s \
      --header "Authorization: token "$1"" \
      --header 'Accept: application/octet-stream' \
      -o Frameworks.zip \
-     --location https://api.github.com/repos/crvshlab/partner-sdk-ios-example-integration/releases/assets/42660873
+     --location https://api.github.com/repos/crvshlab/public-partner-sdk-example-ios/releases/assets/43420139
 
 ## Unzip and Remove
 echo "Unziping Frameworks..."
@@ -76,4 +76,4 @@ fi
 ## Helper: Get Asset IDs
 # Example for current release on repo
 # curl --header "Authorization: token "$1"" \
-# --location https://api.github.com/repos/crvshlab/partner-sdk-ios-example-integration/releases/tags/v0.1.0-dependencies.staging.2
+# --location https://api.github.com/repos/crvshlab/public-partner-sdk-example-ios/releases/tags/v0.1.0-dependencies.staging.1
