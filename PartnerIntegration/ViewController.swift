@@ -142,13 +142,21 @@ class ViewController: UIViewController, HomeController {
                                  grantID: "",
                                  partnerCode: partnerCode,
                                  productCode: productCode,
-                                 appIconName: "") // e.g second_logo
+                                 appIconName: "", // e.g second_logo
+                                 sponsorIconName: "") // e.g second_logo
 
         // Default local theme can be configured
         let designConfiguration = ConfigurationsDesign(theme: theme, screens: nil)
         vParnerLib.configure(designConfig: designConfiguration)
 
-        let destinationVC = vParnerLib.buildAddDeviceViewController()
+        let destinationVC = vParnerLib.buildAddDeviceViewController() { value in
+            DispatchQueue.main.async {
+                let alert = UIAlertController(title: "Onboarding status: \(value)", message: nil, preferredStyle: .alert)
+                alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
+                self.present(alert, animated: true)
+            }
+        }
+        
         destinationVC.modalPresentationStyle = .fullScreen
 
         present(destinationVC, animated: true, completion: nil)
@@ -164,7 +172,8 @@ class ViewController: UIViewController, HomeController {
                                  grantID: "",
                                  partnerCode: partnerCode,
                                  productCode: productCode,
-                                 appIconName: "") // e.g second_logo
+                                 appIconName: "",
+                                 sponsorIconName: "") // e.g second_logo
 
 
         let designConfiguration = ConfigurationsDesign(theme: theme, screens: nil)
