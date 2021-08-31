@@ -2,12 +2,6 @@
 
 # You can modify this script to accomodate your project's needs
 
-## Check if token is given
-if [ -z "$1" ]; then
-    echo "GitHub token was not provided, setup aborted! \nUsage: 'sh setup.sh YOUR_TOKEN'"
-    exit 1
-fi
-
 echo "Starting project setup..."
 
 # Validate Binaries folder
@@ -21,10 +15,9 @@ fi
 # FirebaseInstanceID
 echo "Downloading Frameworks..."
 curl -s \
-     --header "Authorization: token "$1"" \
      --header 'Accept: application/octet-stream' \
      -o Frameworks.zip \
-     --location https://api.github.com/repos/crvshlab/public-partner-sdk-example-ios/releases/assets/43420139
+     --location https://api.github.com/repos/crvshlab/public-partner-sdk-example-ios/releases/assets/43713999
 
 ## Unzip and Remove
 echo "Unziping Frameworks..."
@@ -75,5 +68,5 @@ fi
 
 ## Helper: Get Asset IDs
 # Example for current release on repo
-# curl --header "Authorization: token "$1"" \
-# --location https://api.github.com/repos/crvshlab/public-partner-sdk-example-ios/releases/tags/v0.1.0-dependencies.staging.1
+# curl -s \
+# --location https://api.github.com/repos/crvshlab/public-partner-sdk-example-ios/releases/tags/v0.1.1-dependencies.staging.2
