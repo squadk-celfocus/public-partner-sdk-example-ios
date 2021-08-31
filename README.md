@@ -21,10 +21,7 @@ The following architectures are supported by VPartnerLib .xcframework
 Start by taking a look at the example project provided in this Repo. 
 You'll find a `setup.sh` script that will download the required frameworks into your project. Feel free to modify it to suit your needs.
 
-**Important**: You'll need to have an **access token** in order to get the frameworks. [Contact the SquaDK team](#contact) in order to get your token. 
-You can find more info [here](#https://docs.github.com/en/enterprise-server@2.22/github/authenticating-to-github/keeping-your-account-and-data-secure/creating-a-personal-access-token).
-
-**Usage:** `sh setup.sh <your_github_token>`
+**Usage:** `sh setup.sh`
 The script prints on the terminal if something goes wrong or not. If something is wrong, feel free to [contact the SquaDK team](#contact).
 
 ### Cocoapods
@@ -72,8 +69,9 @@ Please refer to `ViewController.swift` to check the function calls you'll requir
     ///   - grantID: Grant identification - required
     ///   - partnerCode: Code of the Partner - required
     ///   - productCode: Code of the Product - required
-    ///   - appIconName: Name of the image that partner wnats to display on splashscreen - optional
-    public func requiredSetup(clientID: String, grantID: String, partnerCode: String, productCode: String, appIconName: String? = nil)
+    ///   - appIconName: Name of the image that partner wnats to display on splashscreen - optional (default - nil)
+    ///   - sponsorIconName: Name of the sponsor image that partner wnats to display on splashscreen - optional (default - Connected by Vodafone white logo)
+    public func requiredSetup(clientID: String, grantID: String, partnerCode: String, productCode: String, appIconName: String? = nil, sponsorIconName: String? = nil)
     
     /// Configure a local theme
     /// - Parameter designConfig: the design theme if no design is passed it will accept the default
@@ -89,12 +87,16 @@ Please refer to `ViewController.swift` to check the function calls you'll requir
     
     /// Build a entry point skiping the inst of the device, alredy sent in the parameter
     /// - Parameter productID: product id to register
+    /// - Parameter callback: the status of the Onboadring
+    /// - OnboardingResponse: (success, pending or fail)
     /// - Returns: Entry point controller
-    public func buildAddDeviceViewController(productID: String) -> UIViewController
+    public func buildAddDeviceViewController(productID: String, completion: @escaping VPartnerLib.OnboardingCompletionHandler) -> UIViewController
     
     /// Build entry point to add manually the device
+    /// - Parameter callback: the status of the Onboadring
+    /// - OnboardingResponse: (success, pending or fail)
     /// - Returns: Entry point controller
-    public func buildAddDeviceViewController() -> UIViewController
+    public func buildAddDeviceViewController(completion: @escaping VPartnerLib.OnboardingCompletionHandler) -> UIViewController
 ```
 
 ## Changelog
