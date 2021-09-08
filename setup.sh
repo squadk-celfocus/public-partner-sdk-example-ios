@@ -17,7 +17,7 @@ echo "Downloading Frameworks..."
 curl -s \
      --header 'Accept: application/octet-stream' \
      -o Frameworks.zip \
-     --location https://api.github.com/repos/crvshlab/public-partner-sdk-example-ios/releases/assets/43713999
+     --location https://api.github.com/repos/crvshlab/public-partner-sdk-example-ios/releases/assets/44299931
 
 ## Unzip and Remove
 echo "Unziping Frameworks..."
@@ -69,4 +69,4 @@ fi
 ## Helper: Get Asset IDs
 # Example for current release on repo
 # curl -s \
-# --location https://api.github.com/repos/crvshlab/public-partner-sdk-example-ios/releases/tags/v0.1.1-dependencies.staging.2
+# --location https://api.github.com/repos/crvshlab/public-partner-sdk-example-ios/releases/tags/v0.1.2-dependencies.staging
