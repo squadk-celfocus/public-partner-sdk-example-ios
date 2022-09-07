@@ -31,7 +31,7 @@ As seen on `setup.sh`, the script also executes the `pod` configuration. Like me
   pod 'ReactiveCocoa', '~> 10.1'
   pod 'ReactiveSwift', '~> 6.1'
   pod 'SwiftLint'
-  pod 'OpenSSL-Universal'
+  pod 'ASN1Decoder'
   pod 'PhoneNumberKit', '~> 3.3'
   pod 'Firebase/Core'
   pod 'Firebase/Installations'
