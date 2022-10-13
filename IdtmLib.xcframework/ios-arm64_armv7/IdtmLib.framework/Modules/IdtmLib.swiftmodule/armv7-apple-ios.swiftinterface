@@ -1,0 +1,124 @@
+// swift-interface-format-version: 1.0
+// swift-compiler-version: Apple Swift version 5.6.1 (swiftlang-5.6.0.323.66 clang-1316.0.20.12)
+// swift-module-flags: -target armv7-apple-ios10.0 -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -module-name IdtmLib
+import CommonCrypto
+import Foundation
+@_exported import IdtmLib
+import SecLibFramework
+import Security
+import Swift
+import UIKit
+import WebKit
+import _Concurrency
+public typealias InitCompletionHandler = (IdtmLib.InitResponse) -> Swift.Void
+public typealias AuthCompletionHandler = (IdtmLib.AuthenticateResponse) -> Swift.Void
+public enum InitResponse {
+  case success
+  case failure(sdkStatus: IdtmLib.SDKStatus)
+}
+public enum AuthenticateResponse {
+  case success(accessToken: Swift.String, tokenType: Swift.String, sub: Swift.String)
+  case failure(sdkStatus: IdtmLib.SDKStatus)
+}
+@objc @_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers final public class IdtmHelper : ObjectiveC.NSObject {
+  @objc override dynamic public init()
+  final public func initialize(clientId: Swift.String, scopes: [Swift.String], acrWifi: [Swift.String], acrMobile: [Swift.String], redirectUri: Swift.String, firebaseToken: Swift.String, loginHint: Swift.String? = nil, maxWaitInProgressSeconds: Swift.Int = 120, completion: @escaping IdtmLib.InitCompletionHandler)
+  final public func authenticate(clientId: Swift.String, openWebView: Swift.Bool, invalidAccessToken: Swift.String?, vc: UIKit.UIViewController?, isOpenIdConnectClient: Swift.Bool, completion: @escaping IdtmLib.AuthCompletionHandler)
+  final public func logout(completionHandler: @escaping (Swift.Bool) -> Swift.Void)
+  final public func getIdtmLibVersion() -> Swift.String
+  final public func setEnvironment(envType: IdtmLib.EnvironmentType)
+  final public func enableLogs(enable: Swift.Bool)
+  final public func eraseAll()
+  final public func smapiSetup(verbose: Swift.Bool)
+  final public func revokeRefresh()
+  final public func replaceRefresh(newToken: Swift.String)
+  final public var getFirebaseID: Swift.String {
+    get
+  }
+  final public func getSdkId() -> Swift.String
+  @objc deinit
+}
+public enum EnvironmentType : Swift.String {
+  case preprod_esp
+  case prod_esp
+  case staging_aws
+  case preprod_aws
+  case prod_aws
+  public init?(rawValue: Swift.String)
+  public typealias RawValue = Swift.String
+  public var rawValue: Swift.String {
+    get
+  }
+}
+public enum Status : Swift.String {
+  case INITIALISE
+  case UNABLE_TO_INITIALISE
+  case AUTHENTICATE
+  case UNABLE_TO_AUTHENTICATE
+  case LOGOUT
+  case UNABLE_TO_LOGOUT
+  public init?(rawValue: Swift.String)
+  public typealias RawValue = Swift.String
+  public var rawValue: Swift.String {
+    get
+  }
+}
+public enum ErrorCode : Swift.Int {
+  case INTERNET_CONNECTION_ERROR
+  case PROOF_ID_GENERATION
+  case REQUEST_SETUP_COMPLETE_ERROR
+  case SETUP_COMPLETE_RSA_ERROR
+  case SETUP_COMPLETE_AES_ERROR
+  case SETUP_COMPLETE_ERROR_JSON_MALFORMED
+  case NONCE_ERROR_MISSING_PARAMS
+  case REQUEST_NONCE_ERROR
+  case REQUEST_NONCE_CONTEXT_WRONG
+  case REQUEST_ACCESS_TOKEN_ERROR
+  case REQUEST_ACCESS_TOKEN_CONTEXT_WRONG
+  case ACCESS_TOKEN_ERROR_MISSING_PARAMS
+  case ACCESS_TOKEN_ERROR_CODE_MISSING
+  case REQUEST_REFRESH_TOKEN_ERROR
+  case REQUEST_REFRESH_TOKEN_CONTEXT_WRONG
+  case REFRESH_TOKEN_ERROR_MISSING_PARAMS
+  case AUTH_JWE_ERROR
+  case APIX_LOADING_ERROR
+  case SDK_NOT_FOUND
+  case WEBVIEW_MUST_BE_SHOWN
+  case APIX_STATE_ERROR
+  case USER_CANCELED_ERROR
+  case NOT_INITIALIZED
+  case AUTH_FAILED
+  case OPERATION_IN_PROGRESS
+  case REFRESH_TOKEN_ERROR_EMPTY
+  case ACCESS_TOKEN_ERROR_EMPTY
+  case TOKEN_TYPE_ERROR_EMPTY
+  case OAUTH_TOKEN_ERROR_EMPTY
+  case MESSAGE_ERROR_EMPTY
+  case USER_FAILED_TO_LOGIN
+  case INVALID_SCOPE
+  case REDIRECT_ERROR
+  case TEMPORARY_ISSUE_INITIALISE
+  case TEMPORARY_ISSUE_NONCE
+  case TEMPORARY_ISSUE_ACCESSTOKEN
+  case TEMPORARY_ISSUE_REFRESHTOKEN
+  public init?(rawValue: Swift.Int)
+  public typealias RawValue = Swift.Int
+  public var rawValue: Swift.Int {
+    get
+  }
+}
+@objc @_hasMissingDesignatedInitializers public class SDKStatus : ObjectiveC.NSObject {
+  public var status: IdtmLib.Status
+  public var code: IdtmLib.ErrorCode
+  public var message: Swift.String
+  @objc deinit
+}
+extension IdtmLib.EnvironmentType : Swift.Equatable {}
+extension IdtmLib.EnvironmentType : Swift.Hashable {}
+extension IdtmLib.EnvironmentType : Swift.RawRepresentable {}
+extension IdtmLib.Status : Swift.Equatable {}
+extension IdtmLib.Status : Swift.Hashable {}
+extension IdtmLib.Status : Swift.RawRepresentable {}
+extension IdtmLib.ErrorCode : Swift.Equatable {}
+extension IdtmLib.ErrorCode : Swift.Hashable {}
+extension IdtmLib.ErrorCode : Swift.RawRepresentable {}

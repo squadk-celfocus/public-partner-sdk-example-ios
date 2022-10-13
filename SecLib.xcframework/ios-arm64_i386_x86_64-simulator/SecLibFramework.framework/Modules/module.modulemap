@@ -1,0 +1,11 @@
+framework module SecLibFramework {
+  umbrella header "SecLibFramework.h"
+
+  export *
+  module * { export * }
+}
+
+module SecLibFramework.Swift {
+    header "SecLibFramework-Swift.h"
+    requires objc
+}

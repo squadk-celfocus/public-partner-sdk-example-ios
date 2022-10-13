@@ -1,0 +1,144 @@
+// swift-interface-format-version: 1.0
+// swift-compiler-version: Apple Swift version 5.5.2 (swiftlang-1300.0.47.5 clang-1300.0.29.30)
+// swift-module-flags: -target x86_64-apple-ios12.0-simulator -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -module-name VPartnerLib
+import ASN1Decoder
+import AVFoundation
+import Combine
+import CommonCrypto
+import Contacts
+import ContactsUI
+import CoreGraphics
+import CoreTelephony
+import FirebaseInstanceID
+import Foundation
+import IdtmLib
+import Netverify
+import Network
+import PDFKit
+import PhoneNumberKit
+import Photos
+import IdtmLib.Reachability
+import ReactiveCocoa
+import ReactiveSwift
+import Security
+import Swift
+import UIKit
+@_exported import VPartnerLib
+import WebKit
+import _Concurrency
+import os
+extension UIKit.UIImagePickerController {
+  @_Concurrency.MainActor(unsafe) @objc override dynamic open var childForStatusBarHidden: UIKit.UIViewController? {
+    @_Concurrency.MainActor(unsafe) @objc get
+  }
+  @_Concurrency.MainActor(unsafe) @objc override dynamic open var prefersStatusBarHidden: Swift.Bool {
+    @_Concurrency.MainActor(unsafe) @objc get
+  }
+  @_Concurrency.MainActor(unsafe) @objc override dynamic open func viewDidLayoutSubviews()
+}
+public protocol VPartnerLibrary {
+  static var shared: VPartnerLib.VPartnerLibrary { get }
+  func configure(designConfig: VPartnerLib.ConfigurationsDesign)
+  func buildManageSubscriptionsViewController() -> UIKit.UIViewController
+  func manageSubscriptions(vc: UIKit.UIViewController)
+  func buildAddDeviceViewController(completion: @escaping VPartnerLib.OnboardingCompletionHandler) -> UIKit.UIViewController
+  func addDevice(vc: UIKit.UIViewController, completion: @escaping VPartnerLib.OnboardingCompletionHandler)
+  func buildAddDeviceViewController(productID: Swift.String, completion: @escaping VPartnerLib.OnboardingCompletionHandler) -> UIKit.UIViewController
+  func addDevice(productID: Swift.String, vc: UIKit.UIViewController, completion: @escaping VPartnerLib.OnboardingCompletionHandler)
+  func requiredSetup(partnerPassword: Swift.String, partnerCode: Swift.String, productCode: Swift.String, appIconName: Swift.String?, sponsorIconName: Swift.String?, locale: Swift.String?)
+  func requiredSetup(clientID: Swift.String, grantID: Swift.String, partnerCode: Swift.String, productCode: Swift.String, appIconName: Swift.String?, sponsorIconName: Swift.String?, locale: Swift.String?)
+  func logoutUserFromIDTM(completionHandler: @escaping (Swift.Bool) -> Swift.Void)
+}
+public typealias OnboardingCompletionHandler = (VPartnerLib.OnboardingResponse) -> Swift.Void
+public enum OnboardingResponse {
+  case success
+  case pending
+  case fail
+  public static func == (a: VPartnerLib.OnboardingResponse, b: VPartnerLib.OnboardingResponse) -> Swift.Bool
+  public func hash(into hasher: inout Swift.Hasher)
+  public var hashValue: Swift.Int {
+    get
+  }
+}
+@_hasMissingDesignatedInitializers public class VPartnerLib : VPartnerLib.VPartnerLibrary {
+  public static var shared: VPartnerLib.VPartnerLibrary
+  public func requiredSetup(clientID: Swift.String, grantID: Swift.String, partnerCode: Swift.String, productCode: Swift.String, appIconName: Swift.String? = nil, sponsorIconName: Swift.String? = nil, locale: Swift.String? = nil)
+  public func requiredSetup(partnerPassword: Swift.String, partnerCode: Swift.String, productCode: Swift.String, appIconName: Swift.String? = nil, sponsorIconName: Swift.String? = nil, locale: Swift.String? = nil)
+  public func configure(designConfig: VPartnerLib.ConfigurationsDesign = ConfigurationsDesign.defaultDesignConfiguration)
+  public func logoutUserFromIDTM(completionHandler: @escaping (Swift.Bool) -> Swift.Void)
+  @available(*, deprecated, message: "That function will be deprecated in new SDK versions, substituted for manageSubscriptions function with UIViewController parameter.")
+  public func buildManageSubscriptionsViewController() -> UIKit.UIViewController
+  public func manageSubscriptions(vc: UIKit.UIViewController)
+  @available(*, deprecated, message: "That function will be deprecated in new SDK versions, substituted for addDevice function with UIViewController parameter.")
+  public func buildAddDeviceViewController(productID: Swift.String, completion: @escaping VPartnerLib.OnboardingCompletionHandler) -> UIKit.UIViewController
+  public func addDevice(productID: Swift.String, vc: UIKit.UIViewController, completion: @escaping VPartnerLib.OnboardingCompletionHandler)
+  @available(*, deprecated, message: "That function will be deprecated in new SDK versions, substituted for addDevice function with UIViewController parameter.")
+  public func buildAddDeviceViewController(completion: @escaping VPartnerLib.OnboardingCompletionHandler) -> UIKit.UIViewController
+  public func addDevice(vc: UIKit.UIViewController, completion: @escaping VPartnerLib.OnboardingCompletionHandler)
+  @objc deinit
+}
+public struct Spacing {
+  public enum Size : Swift.Int {
+    case one
+    case two
+    case three
+    case four
+    case five
+    public init?(rawValue: Swift.Int)
+    public typealias RawValue = Swift.Int
+    public var rawValue: Swift.Int {
+      get
+    }
+  }
+  public struct Small {
+    public static subscript(value: VPartnerLib.Spacing.Size) -> CoreGraphics.CGFloat {
+      get
+    }
+  }
+  public struct Medium {
+    public static subscript(value: VPartnerLib.Spacing.Size) -> CoreGraphics.CGFloat {
+      get
+    }
+  }
+  public struct Large {
+    public static subscript(value: VPartnerLib.Spacing.Size) -> CoreGraphics.CGFloat {
+      get
+    }
+  }
+  public struct XLarge {
+    public static subscript(value: VPartnerLib.Spacing.Size) -> CoreGraphics.CGFloat {
+      get
+    }
+  }
+}
+public struct ConfigurationsDesign : Swift.Codable, Swift.Equatable {
+  public static var defaultDesignConfiguration: VPartnerLib.ConfigurationsDesign
+  public let theme: VPartnerLib.Theme?
+  public let screens: VPartnerLib.Screens?
+  public init(theme: VPartnerLib.Theme? = nil, screens: VPartnerLib.Screens? = nil)
+  public static func == (lhs: VPartnerLib.ConfigurationsDesign, rhs: VPartnerLib.ConfigurationsDesign) -> Swift.Bool
+  public func encode(to encoder: Swift.Encoder) throws
+  public init(from decoder: Swift.Decoder) throws
+}
+public struct Theme : Swift.Codable, Swift.Equatable {
+  public var backgroundColor: Swift.String?
+  public var primaryButtonColorEnabled: Swift.String?
+  public var primaryButtonColorDisabled: Swift.String?
+  public var secondaryButtonColorEnabled: Swift.String?
+  public var secondaryButtonColorDisabled: Swift.String?
+  public var navigationBarTitleTextColor: Swift.String?
+  public init(backgroundColor: Swift.String? = "#ffffff", primaryButtonColorEnabled: Swift.String? = "#111111", primaryButtonColorDisabled: Swift.String? = "#111111", secondaryButtonColorEnabled: Swift.String? = "#E8E8E8", secondaryButtonColorDisabled: Swift.String? = "#E8E8E8", navigationBarTitleColor: Swift.String? = "#111111")
+  public static func == (a: VPartnerLib.Theme, b: VPartnerLib.Theme) -> Swift.Bool
+  public func encode(to encoder: Swift.Encoder) throws
+  public init(from decoder: Swift.Decoder) throws
+}
+public struct Screens : Swift.Codable, Swift.Equatable {
+  public static func == (a: VPartnerLib.Screens, b: VPartnerLib.Screens) -> Swift.Bool
+  public func encode(to encoder: Swift.Encoder) throws
+  public init(from decoder: Swift.Decoder) throws
+}
+extension VPartnerLib.OnboardingResponse : Swift.Equatable {}
+extension VPartnerLib.OnboardingResponse : Swift.Hashable {}
+extension VPartnerLib.Spacing.Size : Swift.Equatable {}
+extension VPartnerLib.Spacing.Size : Swift.Hashable {}
+extension VPartnerLib.Spacing.Size : Swift.RawRepresentable {}
