@@ -20,6 +20,8 @@ Pod::Spec.new do |spec|
   spec.source       = { :git => "https://github.com/squadk-celfocus/public-partner-sdk-example-ios.git", :tag => "2.1.0" }
   spec.static_framework = true
   spec.ios.vendored_frameworks = "VPartnerLib.xcframework", "FirebaseInstanceID.xcframework", "SecLibFramework.xcframework", "IdtmLib.xcframework"
+  spec.pod_target_xcconfig = { 'EXCLUDED_ARCHS[sdk=iphonesimulator*]' => 'arm64' }
+  spec.user_target_xcconfig = { 'EXCLUDED_ARCHS[sdk=iphonesimulator*]' => 'arm64' }
   spec.platform = :ios
   spec.swift_version = "4.2"
   spec.ios.deployment_target  = '12.0'
