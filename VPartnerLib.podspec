@@ -19,7 +19,7 @@ Pod::Spec.new do |spec|
   spec.author             = { "Matheus Fogiatto" => "matheus.fogiatto@vodafone.com" }
   spec.source       = { :git => "https://github.com/squadk-celfocus/public-partner-sdk-example-ios.git", :tag => "2.1.0" }
   spec.static_framework = true
-  spec.ios.vendored_frameworks = "VPartnerLib.xcframework", "FirebaseInstanceID.xcframework", "SecLibFramework.xcframework", "IdtmLib.xcframework"
+  spec.ios.vendored_frameworks = "VPartnerLib.xcframework", "SecLibFramework.xcframework", "IdtmLib.xcframework"
   spec.pod_target_xcconfig = { 'EXCLUDED_ARCHS[sdk=iphonesimulator*]' => 'arm64' }
   spec.user_target_xcconfig = { 'EXCLUDED_ARCHS[sdk=iphonesimulator*]' => 'arm64' } 
   spec.requires_arc = true
@@ -34,4 +34,5 @@ Pod::Spec.new do |spec|
   spec.dependency 'Firebase/Installations'
   spec.dependency 'Firebase/Messaging'
   spec.dependency 'JumioMobileSDK', '~>3.7.1'
+  spec.dependency 'FirebaseInstanceID'
 end
