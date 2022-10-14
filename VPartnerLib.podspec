@@ -21,11 +21,12 @@ Pod::Spec.new do |spec|
   spec.static_framework = true
   spec.ios.vendored_frameworks = "VPartnerLib.xcframework", "FirebaseInstanceID.xcframework", "SecLibFramework.xcframework", "IdtmLib.xcframework"
   spec.pod_target_xcconfig = { 'EXCLUDED_ARCHS[sdk=iphonesimulator*]' => 'arm64' }
-  spec.user_target_xcconfig = { 'EXCLUDED_ARCHS[sdk=iphonesimulator*]' => 'arm64' }
+  spec.user_target_xcconfig = { 'EXCLUDED_ARCHS[sdk=iphonesimulator*]' => 'arm64' } 
+  spec.requires_arc = true
   spec.platform = :ios
   spec.swift_version = "4.2"
   spec.ios.deployment_target  = '12.0'
-  spec.dependency 'ReactiveCocoa', '~> 10.1'
+  spec.dependency 'ReactiveCocoa'
   spec.dependency 'ReactiveSwift', '~> 6.1'
   spec.dependency 'ASN1Decoder'
   spec.dependency 'PhoneNumberKit', '~> 3.3'
