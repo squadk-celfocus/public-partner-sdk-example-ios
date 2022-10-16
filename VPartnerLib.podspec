@@ -19,7 +19,7 @@ Pod::Spec.new do |spec|
   spec.author             = { "Matheus Fogiatto" => "matheus.fogiatto@vodafone.com" }
   spec.source       = { :git => "https://github.com/squadk-celfocus/public-partner-sdk-example-ios.git", :tag => "2.1.0" }
   spec.static_framework = true
-  spec.ios.vendored_frameworks = "VPartnerLib.xcframework", "SecLibFramework.xcframework", "IdtmLib.xcframework"
+  spec.ios.vendored_frameworks = "VPartnerLib.xcframework", "SecLibFramework.xcframework", "IdtmLib.xcframework", "FirebaseInstanceID.xcframework"
   spec.pod_target_xcconfig = { 'EXCLUDED_ARCHS[sdk=iphonesimulator*]' => 'arm64' }
   spec.user_target_xcconfig = { 'EXCLUDED_ARCHS[sdk=iphonesimulator*]' => 'arm64' } 
   spec.requires_arc = true
@@ -30,10 +30,9 @@ Pod::Spec.new do |spec|
   spec.dependency 'ReactiveSwift', '~> 6.1'
   spec.dependency 'ASN1Decoder'
   spec.dependency 'PhoneNumberKit', '~> 3.3'
-  spec.dependency 'Firebase/Core', '~> 8.10.0'
-  spec.dependency 'FirebaseCoreDiagnostics'
-  spec.dependency 'Firebase/Installations', '~> 8.10.0'
-  spec.dependency 'FirebaseInstanceID'
-  spec.dependency 'Firebase/Messaging', '~> 8.10.0'
+  spec.dependency 'Firebase/Core', '~> 7.0'
+  spec.dependency 'FirebaseCoreDiagnostics', '~> 7.0'
+  spec.dependency 'Firebase/Installations', '~> 7.0'
+  spec.dependency 'Firebase/Messaging', '~> 7.0'
   spec.dependency 'JumioMobileSDK', '~>3.7.1'
 end
