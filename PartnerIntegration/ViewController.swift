@@ -25,30 +25,10 @@ class ViewController: UIViewController, HomeController {
         return label
     }()
     
-    var descriptionDeviceLabel: UILabel = {
-        let label = UILabel()
-        label.textColor = .gray
-        label.textAlignment = .center
-        label.font = UIFont(name: "VodafoneRg-Bold", size: 15)
-        label.numberOfLines = 1
-        label.text = "Serial: UHJ2EVFE676F"
-        label.translatesAutoresizingMaskIntoConstraints = false
-        return label
-    }()
-    
     var addDeviceButton: UIButton = {
         let button = UIButton()
         button.backgroundColor = .black
         button.setTitle("Add Device", for: .normal)
-        button.setTitleColor(.white, for: .normal)
-        button.translatesAutoresizingMaskIntoConstraints = false
-        return button
-    }()
-
-    var logoutButton: UIButton = {
-        let button = UIButton()
-        button.backgroundColor = .black
-        button.setTitle("Logout", for: .normal)
         button.setTitleColor(.white, for: .normal)
         button.translatesAutoresizingMaskIntoConstraints = false
         return button
@@ -69,21 +49,10 @@ class ViewController: UIViewController, HomeController {
         return view
     }()
 
-    var theme: Theme = {
-        var theme = Theme()
-        theme.backgroundColor = UIColor.white.toHexString()
-        theme.primaryButtonColorEnabled = UIColor.black.toHexString()
-        theme.primaryButtonColorDisabled = UIColor.darkGray.toHexString()
-        theme.secondaryButtonColorEnabled = UIColor.white.toHexString()
-        theme.secondaryButtonColorDisabled = UIColor.darkGray.toHexString()
-        theme.navigationBarTitleTextColor = UIColor.black.toHexString()
-        return theme
-    }()
-
     lazy var containerView: UIView = {
         var stack = UIStackView()
         stack.backgroundColor = UIColor(hue: 0, saturation: 0, brightness: 0, alpha: 0.2)
-        stack = UIStackView(arrangedSubviews: [addDeviceButton, manageSubscriptionButton, logoutButton])
+        stack = UIStackView(arrangedSubviews: [addDeviceButton, manageSubscriptionButton])
         stack.axis = .vertical
         stack.distribution = .fillEqually
         stack.alignment = .fill
@@ -99,8 +68,6 @@ class ViewController: UIViewController, HomeController {
         setupConstraints()
         addDeviceButton.addTarget(self, action: #selector(addDeviceAction), for: .touchUpInside)
         manageSubscriptionButton.addTarget(self, action: #selector(manageSubscriptionsAction), for: .touchUpInside)
-        logoutButton.addTarget(self, action: #selector(logoutIDTM), for: .touchUpInside)
-
     }
 
     func setupView() {
@@ -109,7 +76,6 @@ class ViewController: UIViewController, HomeController {
 
         view.addSubview(backView)
         backView.addSubview(nameDeviceLabel)
-        backView.addSubview(descriptionDeviceLabel)
         backView.addSubview(containerView)
     }
 
@@ -122,9 +88,6 @@ class ViewController: UIViewController, HomeController {
             
             nameDeviceLabel.topAnchor.constraint(equalTo: backView.topAnchor, constant: 40),
             nameDeviceLabel.centerXAnchor.constraint(equalTo: backView.centerXAnchor),
-
-            descriptionDeviceLabel.topAnchor.constraint(equalTo: nameDeviceLabel.bottomAnchor, constant: 5),
-            descriptionDeviceLabel.centerXAnchor.constraint(equalTo: backView.centerXAnchor),
             
             containerView.widthAnchor.constraint(equalTo: view.widthAnchor, multiplier: 0.7),
             containerView.heightAnchor.constraint(equalToConstant: 250),
@@ -134,73 +97,50 @@ class ViewController: UIViewController, HomeController {
     }
 
     @objc func addDeviceAction(sender: UIButton!) {
-        let vParnerLib = VPartnerLib.shared
+        let vPartnerLib = VPartnerLib.shared
         let partnerCode = "" // e.g. DUMMY_PARTNER
+        let partnerPassword = "" // Password sent by Vodafone
         let productCode = "" // e.g. DUMMY_PARTNER_TRACKER2
+        let appIconName = "emptyLogo" // default emptyLogo
+        let sponsorIconName = "vodafoneLogo" // default vodafoneLogo
+        let locale: String? = nil // Country code used for Terms & Conditions/Privacy & Policy URLs, before the IDTM Login (OPTIONS: uk, de, es, it, za) (default nil = SIM card locale)
 
-        vParnerLib.requiredSetup(clientID: "",
-                                 grantID: "",
+        vPartnerLib.requiredSetup(partnerPassword: partnerPassword,
                                  partnerCode: partnerCode,
                                  productCode: productCode,
-                                 appIconName: "", // e.g second_logo
-                                 sponsorIconName: "") // e.g second_logo
+                                 appIconName: appIconName,
+                                 sponsorIconName: sponsorIconName,
+                                 locale: locale)
 
-        // Default local theme can be configured
-        let designConfiguration = ConfigurationsDesign(theme: theme, screens: nil)
-        vParnerLib.configure(designConfig: designConfiguration)
-
-        let destinationVC = vParnerLib.buildAddDeviceViewController() { value in
+        vPartnerLib.addDevice(vc: self) { value in
             DispatchQueue.main.async {
                 let alert = UIAlertController(title: "Onboarding status: \(value)", message: nil, preferredStyle: .alert)
                 alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
                 self.present(alert, animated: true)
             }
         }
-        
-        destinationVC.modalPresentationStyle = .fullScreen
-
-        present(destinationVC, animated: true, completion: nil)
     }
 
 
     @objc func manageSubscriptionsAction(sender: UIButton!) {
-        let vParnerLib = VPartnerLib.shared
+        let vPartnerLib = VPartnerLib.shared
         let partnerCode = "" // e.g. DUMMY_PARTNER
+        let partnerPassword = "" // Password sent by Vodafone
         let productCode = "" // e.g. DUMMY_PARTNER_TRACKER2
+        let appIconName = "emptyLogo" // default emptyLogo
+        let sponsorIconName = "vodafoneLogo" // default vodafoneLogo
+        
 
-        vParnerLib.requiredSetup(clientID: "",
-                                 grantID: "",
+        vPartnerLib.requiredSetup(partnerPassword: partnerPassword,
                                  partnerCode: partnerCode,
                                  productCode: productCode,
-                                 appIconName: "",
-                                 sponsorIconName: "") // e.g second_logo
+                                 appIconName: appIconName,
+                                 sponsorIconName: sponsorIconName,
+                                 locale: nil)
 
-
-        let designConfiguration = ConfigurationsDesign(theme: theme, screens: nil)
-        vParnerLib.configure(designConfig: designConfiguration)
-
-        let destinationVC = vParnerLib.buildManageSubscriptionsViewController()
-        destinationVC.modalPresentationStyle = .fullScreen
-
-        present(destinationVC, animated: true, completion: nil)
+        vPartnerLib.manageSubscriptions(vc: self)
     }
 
-    @objc func logoutIDTM() {
-        let vParnerLib = VPartnerLib.shared
-        vParnerLib.logoutUserFromIDTM { result in
-            DispatchQueue.main.async {
-                if result {
-                    let alert = UIAlertController(title: "Logout Successful", message: nil, preferredStyle: .alert)
-                    alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
-                    self.present(alert, animated: true)
-                } else {
-                    let alert = UIAlertController(title: "IDMT Logout failed", message: nil, preferredStyle: .alert)
-                    alert.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
-                    self.present(alert, animated: true)
-                }
-            }
-        }
-    }
     func goHomeController() {
         // action to handle in navigation
     }

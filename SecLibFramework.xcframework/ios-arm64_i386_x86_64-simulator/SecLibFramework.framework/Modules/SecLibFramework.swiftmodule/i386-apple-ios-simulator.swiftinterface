@@ -1,0 +1,211 @@
+// swift-interface-format-version: 1.0
+// swift-compiler-version: Apple Swift version 5.4 (swiftlang-1205.0.26.9 clang-1205.0.19.55)
+// swift-module-flags: -target i386-apple-ios10.0-simulator -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -module-name SecLibFramework
+import SystemConfiguration.CaptiveNetwork
+import CommonCrypto
+import CoreData
+import CoreTelephony
+import Foundation
+import NotificationCenter
+@_exported import SecLibFramework
+import Swift
+import SystemConfiguration
+import UIKit
+import UserNotifications
+import WebKit
+import os.log
+import os
+public enum ReachabilityError : Swift.Error {
+  case failedToCreateWithAddress(Darwin.sockaddr_in)
+  case failedToCreateWithHostname(Swift.String)
+  case unableToSetCallback
+  case unableToSetDispatchQueue
+  case unableToGetInitialFlags
+}
+public typealias MemoryUsage = (used: Swift.UInt64, total: Swift.UInt64)
+public typealias StorageUsage = (used: Swift.Int64, total: Swift.Int64)
+public typealias DeviceData = (name: Swift.String, osVersion: Swift.String, battery: Swift.String)
+@objc @_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers public class Configuration : ObjectiveC.NSObject {
+  public init(withEnvironment environment: SecLibFramework.EnvironmentType, crashEnabled: Swift.Bool = false, verboseEnabled: Swift.Bool = false, packageName: Swift.String? = nil)
+  @objc deinit
+}
+@objc @_hasMissingDesignatedInitializers public class SLRequestMetrics : ObjectiveC.NSObject {
+  public func logResponse(statusCode: Swift.Int, responseHeaders: [Swift.String : Swift.String]?, errorDescription: Swift.String? = nil)
+  @objc override dynamic public init()
+  @objc deinit
+}
+extension UIViewController {
+  @objc dynamic open func customViewDidLoad()
+  @objc dynamic open func customViewDidAppear(animated: Swift.Bool)
+  @objc dynamic open func customViewWillDisappear(animated: Swift.Bool)
+}
+public protocol SLCrashReporterDelegate : ObjectiveC.NSObjectProtocol {
+  func crashEyeDidCatchCrash(with model: SecLibFramework.CrashModel)
+}
+public enum CrashModelType : Swift.Int {
+  case signal
+  case exception
+  public init?(rawValue: Swift.Int)
+  public typealias RawValue = Swift.Int
+  public var rawValue: Swift.Int {
+    get
+  }
+}
+@objc @_hasMissingDesignatedInitializers open class CrashModel : ObjectiveC.NSObject {
+  open var type: SecLibFramework.CrashModelType!
+  open var name: Swift.String!
+  open var reason: Swift.String!
+  open var appinfo: Swift.String!
+  open var callStack: Swift.String!
+  @objc override dynamic public init()
+  @objc deinit
+}
+@objc @_inheritsConvenienceInitializers public class SLCrashReporter : ObjectiveC.NSObject {
+  public static var isOpen: Swift.Bool {
+    get
+  }
+  open class func add(delegate: SecLibFramework.SLCrashReporterDelegate)
+  open class func remove(delegate: SecLibFramework.SLCrashReporterDelegate)
+  @objc override dynamic public init()
+  @objc deinit
+}
+extension NSObject {
+  public var className: Swift.String {
+    get
+  }
+}
+@objc @_inheritsConvenienceInitializers public class SecLib : ObjectiveC.NSObject {
+  @objc public static var enabled: Swift.Bool {
+    @objc get
+    @objc set
+  }
+  @objc public static func setup(withConfiguration configuration: SecLibFramework.Configuration)
+  @objc public static func setup(withEnvironment environment: SecLibFramework.EnvironmentType, crashHandling: Swift.Bool, verboseEnabled: Swift.Bool = false)
+  @objc public static func enableListeners()
+  @objc public static func logCustomEvent(withEventElement eventElement: Swift.String, eventDescription action: Swift.String, onPage pageName: Swift.String, onSubPage subPage: Swift.String, withCustomJSONFields customJSON: [Swift.String : Any]?)
+  @available(iOS, deprecated: 3.0.4, renamed: "logCustomEvent")
+  @objc public static func logEvent(withEventType eventType: SecLibFramework.EventCategory, eventElement: Swift.String, eventDescription: Swift.String, onPage pageName: Swift.String, onSubPage subPage: Swift.String, withCustomJSON customJSON: [Swift.String : Any]? = nil)
+  @objc public static func startTimer(eventElement: Swift.String, uniqueCode: Swift.Int, currentEpoch: Swift.Double)
+  @objc public static func stopTimer(uniqueCode: Swift.Int, currentEpoch: Swift.Double)
+  @objc public static func setScreenName(screenName: Swift.String)
+  @objc public static func appendSession(for url: Foundation.URL) -> Foundation.URL?
+  @objc public static func requestMetrics(withURL url: Swift.String, method: SecLibFramework.HTTPMethod = .unknown, requestHeaders: [Swift.String : Swift.String]? = nil) -> SecLibFramework.SLRequestMetrics?
+  @objc public static func setUserID(userID: Swift.String?) -> Swift.String?
+  @objc public static func getUserID() -> Swift.String?
+  @objc public static func throtleLocalEndPoint(endPoint: [Swift.String])
+  @objc public static func logExceptionEvent(eventElement: Swift.String, exception: Swift.String)
+  @objc public static func getHomeDocStatus() -> Swift.Bool
+  @objc public static func getSettingAPIStatus() -> Swift.Bool
+  @objc public static func getEventsCountInDb() -> Swift.Int
+  @objc public static func getTotalEventFlushed() -> Swift.Int
+  @objc public static func setupCrashHandling(flag: Swift.Bool)
+  @objc public static func getSecLibHeaderObject() -> Swift.String?
+  @objc public static var verboseEnabled: Swift.Bool {
+    @objc get
+    @objc set
+  }
+  @objc public static var setTraceIdKey: Swift.String {
+    @objc get
+    @objc set
+  }
+  @available(iOS 13.0, *)
+  @objc public static func setUpUIScene()
+  @objc public static func logComponents(_ components: [Swift.String : Swift.String]) -> Swift.Bool
+  @objc public static var configureNetworkMonitoring: Swift.Bool {
+    @objc get
+    @objc set
+  }
+  @objc public static func setUpTableViewCapture()
+  @objc public static func setPackageName(packageName: Swift.String)
+  @objc public static func setEnvironment(environment: SecLibFramework.EnvironmentType)
+  @objc override dynamic public init()
+  @objc deinit
+}
+@objc public enum EnvironmentType : Swift.Int, Swift.RawRepresentable {
+  public typealias RawValue = Swift.String
+  case GCPTEST
+  case GCPPRE
+  case GCPPROD
+  public init?(rawValue: SecLibFramework.EnvironmentType.RawValue)
+  public var rawValue: SecLibFramework.EnvironmentType.RawValue {
+    get
+  }
+}
+@objc public enum EventCategory : Swift.Int, Swift.RawRepresentable {
+  case application
+  case page
+  case controls
+  case network
+  case custom
+  case crash
+  case UIChange
+  case exceptions
+  case swipe
+  public typealias RawValue = Swift.String
+  public var rawValue: SecLibFramework.EventCategory.RawValue {
+    get
+  }
+  public init?(rawValue: SecLibFramework.EventCategory.RawValue)
+}
+extension UITableView {
+  @objc dynamic open func nsh_set(delegate: UIKit.UITableViewDelegate?)
+  @objc dynamic open func custom_tableView(_ tableView: UIKit.UITableView, didSelectRowAt indexPath: Foundation.IndexPath)
+}
+@objc public enum HTTPMethod : Swift.Int, Swift.RawRepresentable, Swift.Codable {
+  public typealias RawValue = Swift.String
+  case get
+  case post
+  case put
+  case patch
+  case delete
+  case unknown
+  public init?(rawValue: SecLibFramework.HTTPMethod.RawValue)
+  public var rawValue: SecLibFramework.HTTPMethod.RawValue {
+    get
+  }
+}
+extension Bundle {
+  public class var secLib: Foundation.Bundle {
+    get
+  }
+}
+extension Data {
+  public func sha256() -> Swift.String
+}
+extension UICollectionView {
+  @objc dynamic open func setDelegate(delegate: UIKit.UICollectionViewDelegate?)
+  @objc dynamic open func customCollectionView(_ collectionView: UIKit.UICollectionView, didSelectItemAt indexPath: Foundation.IndexPath)
+}
+extension UIDevice {
+  public func getCPUName() -> Swift.String
+  public func getCPUSpeed() -> Swift.String
+  public func getMachine() -> Swift.String
+}
+@_inheritsConvenienceInitializers @objc(EventModel) public class EventModel : CoreData.NSManagedObject {
+  @objc override dynamic public init(entity: CoreData.NSEntityDescription, insertInto context: CoreData.NSManagedObjectContext?)
+  @objc deinit
+}
+extension EventModel {
+  @nonobjc public class func fetchRequest() -> CoreData.NSFetchRequest<SecLibFramework.EventModel>
+  @objc @NSManaged dynamic public var payload: Foundation.Data? {
+    @objc get
+    @objc set
+  }
+  @objc @NSManaged dynamic public var timestamp: Swift.Int64 {
+    @objc get
+    @objc set
+  }
+  @objc @NSManaged dynamic public var transactionID: Swift.String? {
+    @objc get
+    @objc set
+  }
+}
+extension SecLibFramework.CrashModelType : Swift.Equatable {}
+extension SecLibFramework.CrashModelType : Swift.Hashable {}
+extension SecLibFramework.CrashModelType : Swift.RawRepresentable {}
+extension SecLibFramework.EnvironmentType : Swift.Equatable {}
+extension SecLibFramework.EnvironmentType : Swift.Hashable {}
+extension SecLibFramework.EventCategory : Swift.Equatable {}
+extension SecLibFramework.EventCategory : Swift.Hashable {}
+extension SecLibFramework.HTTPMethod : Swift.Equatable {}
+extension SecLibFramework.HTTPMethod : Swift.Hashable {}

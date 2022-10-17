@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 52;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -15,33 +15,8 @@
 		2747B3BF2555A64A00E5A20D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2747B3BD2555A64A00E5A20D /* LaunchScreen.storyboard */; };
 		5D68400B258C831C0095467A /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5D68400A258C831C0095467A /* GoogleService-Info.plist */; };
 		5D68400E258C8D100095467A /* UiColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D68400D258C8D100095467A /* UiColorExtension.swift */; };
-		A82C5FFD26B2E7B60072DA2D /* IdtmLib.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = A8CA99F526B2CCCD004B9F61 /* IdtmLib.xcframework */; };
-		A82C5FFE26B2E7B60072DA2D /* IdtmLib.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = A8CA99F526B2CCCD004B9F61 /* IdtmLib.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		A82C5FFF26B2E7B60072DA2D /* SecLib.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = A8CA99F326B2CCCD004B9F61 /* SecLib.xcframework */; };
-		A82C600026B2E7B60072DA2D /* SecLib.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = A8CA99F326B2CCCD004B9F61 /* SecLib.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		A82C600126B2E7B60072DA2D /* VPartnerLib.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = A8CA99F626B2CCCD004B9F61 /* VPartnerLib.xcframework */; };
-		A82C600226B2E7B60072DA2D /* VPartnerLib.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = A8CA99F626B2CCCD004B9F61 /* VPartnerLib.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		A82C604026B2E8AB0072DA2D /* FirebaseInstanceID.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = A8CA99F426B2CCCD004B9F61 /* FirebaseInstanceID.xcframework */; };
-		A82C604126B2E8AB0072DA2D /* FirebaseInstanceID.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = A8CA99F426B2CCCD004B9F61 /* FirebaseInstanceID.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		D6B4FC2C0E93924F4E2F3B92 /* Pods_PartnerIntegration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 48831B9132DD9857E5B7D500 /* Pods_PartnerIntegration.framework */; };
 /* End PBXBuildFile section */
-
-/* Begin PBXCopyFilesBuildPhase section */
-		A82C600326B2E7B60072DA2D /* Embed Frameworks */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = "";
-			dstSubfolderSpec = 10;
-			files = (
-				A82C604126B2E8AB0072DA2D /* FirebaseInstanceID.xcframework in Embed Frameworks */,
-				A82C5FFE26B2E7B60072DA2D /* IdtmLib.xcframework in Embed Frameworks */,
-				A82C600026B2E7B60072DA2D /* SecLib.xcframework in Embed Frameworks */,
-				A82C600226B2E7B60072DA2D /* VPartnerLib.xcframework in Embed Frameworks */,
-			);
-			name = "Embed Frameworks";
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		2747B3AF2555A64800E5A20D /* PartnerIntegration.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PartnerIntegration.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -57,10 +32,6 @@
 		5D68400A258C831C0095467A /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		5D68400D258C8D100095467A /* UiColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UiColorExtension.swift; sourceTree = "<group>"; };
 		62DE908A1EBCD4CA68C3390F /* Pods-PartnerIntegration.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PartnerIntegration.debug.xcconfig"; path = "Target Support Files/Pods-PartnerIntegration/Pods-PartnerIntegration.debug.xcconfig"; sourceTree = "<group>"; };
-		A8CA99F326B2CCCD004B9F61 /* SecLib.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = SecLib.xcframework; path = Frameworks/SecLib.xcframework; sourceTree = "<group>"; };
-		A8CA99F426B2CCCD004B9F61 /* FirebaseInstanceID.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = FirebaseInstanceID.xcframework; path = Frameworks/FirebaseInstanceID.xcframework; sourceTree = "<group>"; };
-		A8CA99F526B2CCCD004B9F61 /* IdtmLib.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = IdtmLib.xcframework; path = Frameworks/IdtmLib.xcframework; sourceTree = "<group>"; };
-		A8CA99F626B2CCCD004B9F61 /* VPartnerLib.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = VPartnerLib.xcframework; path = Frameworks/VPartnerLib.xcframework; sourceTree = "<group>"; };
 		AE0787CAF959163F8F918C28 /* Pods-PartnerIntegration.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PartnerIntegration.release.xcconfig"; path = "Target Support Files/Pods-PartnerIntegration/Pods-PartnerIntegration.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -69,10 +40,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A82C600126B2E7B60072DA2D /* VPartnerLib.xcframework in Frameworks */,
-				A82C604026B2E8AB0072DA2D /* FirebaseInstanceID.xcframework in Frameworks */,
-				A82C5FFD26B2E7B60072DA2D /* IdtmLib.xcframework in Frameworks */,
-				A82C5FFF26B2E7B60072DA2D /* SecLib.xcframework in Frameworks */,
 				D6B4FC2C0E93924F4E2F3B92 /* Pods_PartnerIntegration.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -127,10 +94,6 @@
 		448CC71F373E3DC32DB7B1C3 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				A8CA99F426B2CCCD004B9F61 /* FirebaseInstanceID.xcframework */,
-				A8CA99F526B2CCCD004B9F61 /* IdtmLib.xcframework */,
-				A8CA99F326B2CCCD004B9F61 /* SecLib.xcframework */,
-				A8CA99F626B2CCCD004B9F61 /* VPartnerLib.xcframework */,
 				48831B9132DD9857E5B7D500 /* Pods_PartnerIntegration.framework */,
 			);
 			name = Frameworks;
@@ -163,7 +126,6 @@
 				2747B3AB2555A64800E5A20D /* Sources */,
 				2747B3AC2555A64800E5A20D /* Frameworks */,
 				2747B3AD2555A64800E5A20D /* Resources */,
-				A82C600326B2E7B60072DA2D /* Embed Frameworks */,
 				B09E8DF83FAFDE08EEDB32A1 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
@@ -436,7 +398,7 @@
 				);
 				LIBRARY_SEARCH_PATHS = "$(inherited)";
 				OTHER_LDFLAGS = "$(inherited)";
-				PRODUCT_BUNDLE_IDENTIFIER = com.celfocus.squadk.partnerapp;
+				PRODUCT_BUNDLE_IDENTIFIER = com.vodafone.smartlife.vpartner;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -464,7 +426,7 @@
 				);
 				LIBRARY_SEARCH_PATHS = "$(inherited)";
 				OTHER_LDFLAGS = "$(inherited)";
-				PRODUCT_BUNDLE_IDENTIFIER = com.celfocus.squadk.partnerapp;
+				PRODUCT_BUNDLE_IDENTIFIER = com.vodafone.smartlife.vpartner;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";

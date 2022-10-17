@@ -1,0 +1,11 @@
+framework module VPartnerLib {
+  umbrella header "VPartnerLib.h"
+
+  export *
+  module * { export * }
+}
+
+module VPartnerLib.Swift {
+    header "VPartnerLib-Swift.h"
+    requires objc
+}
