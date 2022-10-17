@@ -8,7 +8,7 @@ The SDK will allow partners to centralize and do everything related with their d
 The SDK is built under Vodafone's design system, but allows for the Partners to use their own logos and colours for a seamless experience. 
 
 ### Requirements
-- XCode 12.5
+- XCode 13+
 - iOS 12.0+
 
 ### Supported Architectures
