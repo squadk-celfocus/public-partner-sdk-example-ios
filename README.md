@@ -10,7 +10,6 @@ The SDK is built under Vodafone's design system, but allows for the Partners to 
 ### Requirements
 - XCode 12.5
 - iOS 12.0+
-- IDTM, SecLib and FirebaseInstanceID frameworks, [check Setup section](#setup)
 
 ### Supported Architectures
 The following architectures are supported by VPartnerLib .xcframework
@@ -18,33 +17,22 @@ The following architectures are supported by VPartnerLib .xcframework
 - x86_64_simulator
 
 ## Setup
-Start by taking a look at the example project provided in this Repo. 
-You'll find a `setup.sh` script that will download the required frameworks into your project. Feel free to modify it to suit your needs.
-
-**Usage:** `sh setup.sh`
-The script prints on the terminal if something goes wrong or not. If something is wrong, feel free to [contact the SquaDK team](#contact).
+Start by taking a look at the example project provided in this Repo.
 
 ### Cocoapods
-As seen on `setup.sh`, the script also executes the `pod` configuration. Like mentioned above, you are free to modify the script, but you must guarantee the following pods are part of your `Podfile`:
+We use CocoaPods as dependency management tool, for a easy integration of the SDK you must guarantee the VPartnerLib pod are part of your `Podfile`:
 
 ```ruby
-  pod 'ReactiveCocoa', '~> 10.1'
-  pod 'ReactiveSwift', '~> 6.1'
-  pod 'SwiftLint'
-  pod 'ASN1Decoder'
-  pod 'PhoneNumberKit', '~> 3.3'
-  pod 'Firebase/Core'
-  pod 'Firebase/Installations'
-  pod 'Firebase/Messaging'
-  pod 'JumioMobileSDK', '~>3.7.1'
+  pod 'VPartnerLib', '~> 2.1.0'
 ```
 
+You are required to use Cocoapods 1.11.0 or newer.
 Also, make sure you use `use_frameworks!` to avoid issues while building and running your project.
 
 ## Integration
 
 ### Keys
-In order to run the SDK a `ClientID` and `GrantID` are necessary.
+In order to run the SDK a `ClientID` and `GrantID` or `PartnerPassword` are necessary.
 Each partner is entitled to one. Contact the SquaDK team in order to get these keys.
 
 ### GoogleService-info.plist
