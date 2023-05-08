@@ -16,7 +16,7 @@ Pod::Spec.new do |spec|
                    Permission is granted to Vodafone.
                   LICENSE
                 }
-  spec.author             = { "Matheus Fogiatto" => "matheus.fogiatto@vodafone.com" }
+  spec.author             = { "Squadk" => "squadk@celfocus.com" }
   spec.source       = { :git => "https://github.com/squadk-celfocus/public-partner-sdk-example-ios.git", :tag => spec.version }
   spec.static_framework = true
   spec.ios.vendored_frameworks = "VPartnerLib.xcframework", "FirebaseInstanceID.xcframework", "SecLibFramework.xcframework", "IdtmLib.xcframework"

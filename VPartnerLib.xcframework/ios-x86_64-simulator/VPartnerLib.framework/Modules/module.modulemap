@@ -6,6 +6,6 @@ framework module VPartnerLib {
 }
 
 module VPartnerLib.Swift {
-    header "VPartnerLib-Swift.h"
-    requires objc
+  header "VPartnerLib-Swift.h"
+  requires objc
 }
