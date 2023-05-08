@@ -19,12 +19,17 @@ The following architectures are supported by VPartnerLib .xcframework
 ## Setup
 Start by taking a look at the example project provided in this Repo.
 
-### Cocoapods
-We use CocoaPods as dependency management tool, for a easy integration of the SDK you must guarantee the VPartnerLib pod are part of your `Podfile`:
+### Pods
+
+We use pods, for a easy integration of the SDK you must guarantee the VPartnerLib pod are part of your `Podfile`:
 
 ```ruby
-  pod 'VPartnerLib', :git => 'https://github.com/squadk-celfocus/public-partner-sdk-example-ios', :tag => '3.0.0'
+  source 'https://github.com/squadk-celfocus/public-partner-sdk-example-ios.git'
+
+  pod 'VPartnerLib',  '3.0.0'
 ```
+
+And run `pod install` or `pod install --repo-update` (If you are already using pods for VPartnerLib).
 
 You are required to use Cocoapods 1.11.0 or newer.
 Also, make sure you use `use_frameworks!` to avoid issues while building and running your project.
