@@ -6,7 +6,39 @@
 	<dict>
 		<key>Assets.car</key>
 		<data>
-		x2LNdTIkXVkvolnjTCfM4OJStbg=
+		bhPah/qDTSLXjcMz7UyopjAgJiY=
+		</data>
+		<key>Frameworks/IdtmLib.framework/IdtmLib</key>
+		<data>
+		TJU3nDQFx8almRZm8Xq0csBZN8E=
+		</data>
+		<key>Frameworks/IdtmLib.framework/Info.plist</key>
+		<data>
+		5l+GZCr5oO5k9mU6oyUayI44VNU=
+		</data>
+		<key>Frameworks/IdtmLib.framework/SdkStoryboard.storyboardc/ApixWebView.nib</key>
+		<data>
+		D9LmBRkcpGK93RwOwRwkuetEN1s=
+		</data>
+		<key>Frameworks/IdtmLib.framework/SdkStoryboard.storyboardc/Htv-Nu-xf1-view-ppm-h6-giQ.nib</key>
+		<data>
+		b3Cg+kx86njl3oZjYg1MQNzU/pE=
+		</data>
+		<key>Frameworks/IdtmLib.framework/SdkStoryboard.storyboardc/Info.plist</key>
+		<data>
+		l6sUWE4S5PwTi8eyT7WOq0wqX2E=
+		</data>
+		<key>Frameworks/IdtmLib.framework/SdkStoryboard.storyboardc/OUe-OU-uAg-view-dV5-oF-Oka.nib</key>
+		<data>
+		5mVRliZ2JBEK0mepRE+C6I2IR7Y=
+		</data>
+		<key>Frameworks/IdtmLib.framework/SdkStoryboard.storyboardc/Test.nib</key>
+		<data>
+		DIxOcdbnctW0EbulNGTRR5V72Gw=
+		</data>
+		<key>Frameworks/IdtmLib.framework/_CodeSignature/CodeResources</key>
+		<data>
+		2ag5AgGjTIutvMkA75hVpKmGjMM=
 		</data>
 		<key>GoogleService-Info.plist</key>
 		<data>
@@ -22,7 +54,7 @@
 		</data>
 		<key>Headers/VPartnerLib-Swift.h</key>
 		<data>
-		F5bdgCp8DK0oDscepkGopDk/QNA=
+		lR1dIfEc2RdGAkkxh7XV/mgF4SU=
 		</data>
 		<key>Headers/VPartnerLib.h</key>
 		<data>
@@ -30,35 +62,31 @@
 		</data>
 		<key>Info.plist</key>
 		<data>
-		O9Mg2dXtgA8Byh/O4fkJFy5hqjw=
+		4Qaoyr5JcRapXjIKlhi5mKFRiNk=
+		</data>
+		<key>Modules/VPartnerLib.swiftmodule/x86_64-apple-ios-simulator.abi.json</key>
+		<data>
+		bqaN2KJWtPdv89zs6AGodYfx0d0=
+		</data>
+		<key>Modules/VPartnerLib.swiftmodule/x86_64-apple-ios-simulator.private.swiftinterface</key>
+		<data>
+		ewRtt/70vcIZ2W5ISN7fpj7k2Q4=
 		</data>
 		<key>Modules/VPartnerLib.swiftmodule/x86_64-apple-ios-simulator.swiftdoc</key>
 		<data>
-		vGH49j+Uvfvc8EpqdFIM74+hISU=
+		AEvG4Sir8/199qoLvigeiZmRTuA=
 		</data>
 		<key>Modules/VPartnerLib.swiftmodule/x86_64-apple-ios-simulator.swiftinterface</key>
 		<data>
-		NsaR2wRzLo2Epc1Qvh/CUgjwpNU=
+		ewRtt/70vcIZ2W5ISN7fpj7k2Q4=
 		</data>
 		<key>Modules/VPartnerLib.swiftmodule/x86_64-apple-ios-simulator.swiftmodule</key>
 		<data>
-		EV3Fm4CSAuT/Ka+wu9jg/0pento=
-		</data>
-		<key>Modules/VPartnerLib.swiftmodule/x86_64.swiftdoc</key>
-		<data>
-		vGH49j+Uvfvc8EpqdFIM74+hISU=
-		</data>
-		<key>Modules/VPartnerLib.swiftmodule/x86_64.swiftinterface</key>
-		<data>
-		NsaR2wRzLo2Epc1Qvh/CUgjwpNU=
-		</data>
-		<key>Modules/VPartnerLib.swiftmodule/x86_64.swiftmodule</key>
-		<data>
-		EV3Fm4CSAuT/Ka+wu9jg/0pento=
+		O9yLlY0g9nmbtsSgfQifAtbpLJU=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
-		HyxsbEN5XohSLNWuhVbo9yfpSig=
+		Unmh3cj3Lkk/qY5C2pJxjKcs/uo=
 		</data>
 		<key>de.lproj/Localizable.strings</key>
 		<dict>
@@ -168,7 +196,63 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			hPygYjaQPeCqtkcd2+tGEBHBDC3yw7ViDMiic3i28XY=
+			ZrXbaDDuaILr816mNoIbezwx/bFyA2J9Ky0JltI6c00=
+			</data>
+		</dict>
+		<key>Frameworks/IdtmLib.framework/IdtmLib</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			nf/Ycn9yzc7iA2dP8yFG3KjAopCtN2hQwhOimj34EeA=
+			</data>
+		</dict>
+		<key>Frameworks/IdtmLib.framework/Info.plist</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			Vm4yBbNoj5GIBaqnt6Cil3rFqT+O4rtSuBCxsAGwOIc=
+			</data>
+		</dict>
+		<key>Frameworks/IdtmLib.framework/SdkStoryboard.storyboardc/ApixWebView.nib</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			e/Sd8huHxJRwBqzohan1VgY9r/oEOjUiwFGXgFWyZhc=
+			</data>
+		</dict>
+		<key>Frameworks/IdtmLib.framework/SdkStoryboard.storyboardc/Htv-Nu-xf1-view-ppm-h6-giQ.nib</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			nlYiSYo2+FgQjEHhVN+P+b77nlSbpnqWU42saxUAlMw=
+			</data>
+		</dict>
+		<key>Frameworks/IdtmLib.framework/SdkStoryboard.storyboardc/Info.plist</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			JXJUaat46snazH1SauXQklpWOg98cVJ4O6izr4JRSPU=
+			</data>
+		</dict>
+		<key>Frameworks/IdtmLib.framework/SdkStoryboard.storyboardc/OUe-OU-uAg-view-dV5-oF-Oka.nib</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			oyMgV2vf7dQODkbRkCpY44YsTJ1imScqNFra5dODkvE=
+			</data>
+		</dict>
+		<key>Frameworks/IdtmLib.framework/SdkStoryboard.storyboardc/Test.nib</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			FnT2SYWrLsfhwBlpl+tNtZeOA77Gk19M1mt22BNOgmg=
+			</data>
+		</dict>
+		<key>Frameworks/IdtmLib.framework/_CodeSignature/CodeResources</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			GUL7rlAMcpDz6uVlYj4m4i/N117rW/Rfe6PaSqM5K78=
 			</data>
 		</dict>
 		<key>GoogleService-Info.plist</key>
@@ -196,7 +280,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			3eAvUP8DYTD5f9tXNTenIOutEIWZUQb6YYZXU8skSD8=
+			teq58Vt5m+o79nLojU3P3rphetRgtOGYtWlivX5XdOg=
 			</data>
 		</dict>
 		<key>Headers/VPartnerLib.h</key>
@@ -206,53 +290,46 @@
 			D4/WDpg2Lw0EB5LXM2g5yIFhAsDZ2hUELz2GvQ2ngVg=
 			</data>
 		</dict>
+		<key>Modules/VPartnerLib.swiftmodule/x86_64-apple-ios-simulator.abi.json</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			vqfPcNbStcztbPvjqdxMAjRGKY10oz6OMT99JiOv4os=
+			</data>
+		</dict>
+		<key>Modules/VPartnerLib.swiftmodule/x86_64-apple-ios-simulator.private.swiftinterface</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			7GhwxFCAaNFaTyjudaW9bVxHrmOizcoKqHALcYoG9us=
+			</data>
+		</dict>
 		<key>Modules/VPartnerLib.swiftmodule/x86_64-apple-ios-simulator.swiftdoc</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			yyuddKqYMsGx3uxo0Zf4HY55pqOdCZ4ibkJDC92Cg+Q=
+			hpHOJDMHzBBRKrZgbKuJ/1UGwsy6BgUrct2C/Km5QfY=
 			</data>
 		</dict>
 		<key>Modules/VPartnerLib.swiftmodule/x86_64-apple-ios-simulator.swiftinterface</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			XwJCDRx6g7qmUzXzT4J20mDqCBRLEvCKAxqu5uC4iq4=
+			7GhwxFCAaNFaTyjudaW9bVxHrmOizcoKqHALcYoG9us=
 			</data>
 		</dict>
 		<key>Modules/VPartnerLib.swiftmodule/x86_64-apple-ios-simulator.swiftmodule</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			M8zUXSWRnk6Jmngx/+04a7JOTohvO2ohVICNWIDAEF0=
-			</data>
-		</dict>
-		<key>Modules/VPartnerLib.swiftmodule/x86_64.swiftdoc</key>
-		<dict>
-			<key>hash2</key>
-			<data>
-			yyuddKqYMsGx3uxo0Zf4HY55pqOdCZ4ibkJDC92Cg+Q=
-			</data>
-		</dict>
-		<key>Modules/VPartnerLib.swiftmodule/x86_64.swiftinterface</key>
-		<dict>
-			<key>hash2</key>
-			<data>
-			XwJCDRx6g7qmUzXzT4J20mDqCBRLEvCKAxqu5uC4iq4=
-			</data>
-		</dict>
-		<key>Modules/VPartnerLib.swiftmodule/x86_64.swiftmodule</key>
-		<dict>
-			<key>hash2</key>
-			<data>
-			M8zUXSWRnk6Jmngx/+04a7JOTohvO2ohVICNWIDAEF0=
+			E4TteUVEFEixI6IB7ooClJTMIrqU8U6XrN0S8SEoxz0=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			4f4ejaFYuDkCeIgKnltV0UYuDXWjaHo3eA9uFbuZACU=
+			45scamCNQ3ct8egGv8Lfum97iLz7XvrqfSjEE6IsGZA=
 			</data>
 		</dict>
 		<key>de.lproj/Localizable.strings</key>

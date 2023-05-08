@@ -1,0 +1,297 @@
+// swift-interface-format-version: 1.0
+// swift-compiler-version: Apple Swift version 5.6.1 (swiftlang-5.6.0.323.66 clang-1316.0.20.12)
+// swift-module-flags: -target x86_64-apple-ios11.0-simulator -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -module-name SecLibFramework
+import SystemConfiguration.CaptiveNetwork
+import CommonCrypto
+import CoreData
+import CoreMotion
+import CoreTelephony
+import Foundation
+import NotificationCenter
+import PhotosUI
+@_exported import SecLibFramework
+import Swift
+import SystemConfiguration
+import UIKit
+import UserNotifications
+import WebKit
+import _Concurrency
+import os.log
+import os
+public enum ReachabilityError : Swift.Error {
+  case failedToCreateWithAddress(Darwin.sockaddr_in)
+  case failedToCreateWithHostname(Swift.String)
+  case unableToSetCallback
+  case unableToSetDispatchQueue
+  case unableToGetInitialFlags
+}
+public typealias MemoryUsage = (used: Swift.UInt64, total: Swift.UInt64)
+public typealias StorageUsage = (used: Swift.Int64, total: Swift.Int64)
+public typealias DeviceData = (name: Swift.String, osVersion: Swift.String, battery: Swift.String)
+public typealias CPUUsage = (system: Swift.Double, user: Swift.Double, idle: Swift.Double, nice: Swift.Double)
+@objc @_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers public class Configuration : ObjectiveC.NSObject {
+  public init(withEnvironment environment: SecLibFramework.EnvironmentType, crashEnabled: Swift.Bool = false, verboseEnabled: Swift.Bool = false, packageName: Swift.String? = nil)
+  @objc deinit
+}
+extension SecLibFramework.SecLib {
+  @objc public static var bugReportEnabled: Swift.Bool {
+    @objc get
+  }
+  @objc public static func startCustomerChannel(withPrivacyURL dataPrivacyURL: Foundation.URL, enabledWelcomeMessage: Swift.Bool = true, invocationEvent: SecLibFramework.InvocationEvent, autoShowRate: Swift.Bool)
+  @objc public static func showBugReport()
+  @objc public static func stopBugReport()
+  @objc public static func showWelcomeMessage()
+  @objc public static var customerChannelInvocationEvents: SecLibFramework.InvocationEvent {
+    @objc get
+    @objc set
+  }
+  @objc public static var customerChannelShakingThreshold: Swift.Double {
+    @objc get
+    @objc set
+  }
+  @objc public static func setLocale(language: SecLibFramework.Language)
+  @objc public static func setValue(_ text: Swift.String, localizationKey: SecLibFramework.LocalizationKeys)
+  @objc public static func showAppRate()
+}
+@objc @_hasMissingDesignatedInitializers public class SLRequestMetrics : ObjectiveC.NSObject {
+  public func logResponse(statusCode: Swift.Int, responseHeaders: [Swift.String : Swift.String]?, errorDescription: Swift.String? = nil)
+  @objc deinit
+}
+extension UIKit.UIViewController {
+  @objc @_Concurrency.MainActor(unsafe) dynamic open func customTwoFingersSwipeViewDidLoad()
+  @objc @_Concurrency.MainActor(unsafe) dynamic open func customViewDidLoad()
+  @objc @_Concurrency.MainActor(unsafe) dynamic open func customViewDidAppear(animated: Swift.Bool)
+  @objc @_Concurrency.MainActor(unsafe) dynamic open func customViewWillDisappear(animated: Swift.Bool)
+}
+extension ObjectiveC.NSObject {
+  public var className: Swift.String {
+    get
+  }
+}
+@objc @_inheritsConvenienceInitializers public class SecLib : ObjectiveC.NSObject {
+  @objc public static var enabled: Swift.Bool {
+    @objc get
+    @objc set
+  }
+  @objc public static func setup(withConfiguration configuration: SecLibFramework.Configuration)
+  @objc public static func setup(withEnvironment environment: SecLibFramework.EnvironmentType, crashHandling: Swift.Bool, verboseEnabled: Swift.Bool = false)
+  @objc public static func enableListeners()
+  @objc public static func logCustomEvent(withEventElement eventElement: Swift.String, eventDescription action: Swift.String, onPage pageName: Swift.String, onSubPage subPage: Swift.String, withCustomJSONFields customJSON: [Swift.String : Any]?)
+  @available(iOS, deprecated: 3.0.4, renamed: "logCustomEvent")
+  @objc public static func logEvent(withEventType eventType: SecLibFramework.EventCategory, eventElement: Swift.String, eventDescription: Swift.String, onPage pageName: Swift.String, onSubPage subPage: Swift.String, withCustomJSON customJSON: [Swift.String : Any]? = nil)
+  @objc public static func startTimer(eventElement: Swift.String, uniqueCode: Swift.Int, currentEpoch: Swift.Double)
+  @objc public static func stopTimer(uniqueCode: Swift.Int, currentEpoch: Swift.Double)
+  @objc public static func setScreenName(screenName: Swift.String)
+  @objc public static func appendSession(for url: Foundation.URL) -> Foundation.URL?
+  @objc public static func requestMetrics(withURL url: Swift.String, method: SecLibFramework.HTTPMethod = .unknown, requestHeaders: [Swift.String : Swift.String]? = nil) -> SecLibFramework.SLRequestMetrics?
+  @objc public static func setUserID(userID: Swift.String?) -> Swift.String?
+  @objc public static func getUserID() -> Swift.String?
+  @objc public static func throtleLocalEndPoint(endPoint: [Swift.String])
+  @objc public static func logExceptionEvent(eventElement: Swift.String, exception: Swift.String)
+  @objc public static func getHomeDocStatus() -> Swift.Bool
+  @objc public static func getSettingAPIStatus() -> Swift.Bool
+  @objc public static func getEventsCountInDb() -> Swift.Int
+  @objc public static func getTotalEventFlushed() -> Swift.Int
+  @objc public static func setupCrashHandling(flag: Swift.Bool)
+  @objc public static func getSecLibHeaderObject() -> Swift.String?
+  @objc public static var verboseEnabled: Swift.Bool {
+    @objc get
+    @objc set
+  }
+  @objc public static var setTraceIdKey: Swift.String {
+    @objc get
+    @objc set
+  }
+  @available(iOS 13.0, *)
+  @objc public static func setUpUIScene()
+  @objc public static func logComponents(_ components: [Swift.String : Swift.String]) -> Swift.Bool
+  @objc public static var configureNetworkMonitoring: Swift.Bool {
+    @objc get
+    @objc set
+  }
+  @objc public static func setUpTableViewCapture()
+  @objc public static func setPackageName(packageName: Swift.String)
+  @objc public static func setEnvironment(environment: SecLibFramework.EnvironmentType)
+  @objc override dynamic public init()
+  @objc deinit
+}
+@objc public enum EnvironmentType : Swift.Int, Swift.RawRepresentable {
+  public typealias RawValue = Swift.String
+  case GCPTEST
+  case GCPPRE
+  case GCPPROD
+  public init?(rawValue: SecLibFramework.EnvironmentType.RawValue)
+  public var rawValue: SecLibFramework.EnvironmentType.RawValue {
+    get
+  }
+}
+@objc public enum Language : Swift.Int, Swift.RawRepresentable {
+  public typealias RawValue = Swift.String
+  case english
+  case germany
+  public init?(rawValue: SecLibFramework.Language.RawValue)
+  public var rawValue: SecLibFramework.Language.RawValue {
+    get
+  }
+}
+@objc public enum EventCategory : Swift.Int, Swift.RawRepresentable {
+  case application
+  case page
+  case controls
+  case network
+  case custom
+  case crash
+  case UIChange
+  case exceptions
+  case swipe
+  public typealias RawValue = Swift.String
+  public var rawValue: SecLibFramework.EventCategory.RawValue {
+    get
+  }
+  public init?(rawValue: SecLibFramework.EventCategory.RawValue)
+}
+@objc public enum InvocationEvent : Swift.Int, Swift.RawRepresentable {
+  case none
+  case shake
+  case twoFingersSwipeLeft
+  public typealias RawValue = Swift.Int
+  public var rawValue: SecLibFramework.InvocationEvent.RawValue {
+    get
+  }
+  public init?(rawValue: SecLibFramework.InvocationEvent.RawValue)
+}
+extension UIKit.UITableView {
+  @objc @_Concurrency.MainActor(unsafe) dynamic open func nsh_set(delegate: UIKit.UITableViewDelegate?)
+  @objc @_Concurrency.MainActor(unsafe) dynamic open func custom_tableView(_ tableView: UIKit.UITableView, didSelectRowAt indexPath: Foundation.IndexPath)
+}
+@objc public enum HTTPMethod : Swift.Int, Swift.RawRepresentable, Swift.Codable {
+  public typealias RawValue = Swift.String
+  case get
+  case post
+  case put
+  case patch
+  case delete
+  case unknown
+  public init?(rawValue: SecLibFramework.HTTPMethod.RawValue)
+  public var rawValue: SecLibFramework.HTTPMethod.RawValue {
+    get
+  }
+}
+@objc @_inheritsConvenienceInitializers public class LocalizationManager : ObjectiveC.NSObject {
+  @objc override dynamic public init()
+  @objc deinit
+}
+extension Foundation.Bundle {
+  public class var secLib: Foundation.Bundle {
+    get
+  }
+}
+extension Foundation.Data {
+  public func sha256() -> Swift.String
+}
+extension UIKit.UICollectionView {
+  @objc @_Concurrency.MainActor(unsafe) dynamic open func setDelegate(delegate: UIKit.UICollectionViewDelegate?)
+  @objc @_Concurrency.MainActor(unsafe) dynamic open func customCollectionView(_ collectionView: UIKit.UICollectionView, didSelectItemAt indexPath: Foundation.IndexPath)
+}
+extension UIKit.UIFont {
+  public class func vodafoneRegular(_ size: CoreGraphics.CGFloat, shouldScale: Swift.Bool = true) -> UIKit.UIFont
+  public class func vodafoneLite(_ size: CoreGraphics.CGFloat, shouldScale: Swift.Bool = true) -> UIKit.UIFont
+  public class func vodafoneBold(_ size: CoreGraphics.CGFloat, shouldScale: Swift.Bool = true) -> UIKit.UIFont
+}
+@objc @_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers @_Concurrency.MainActor(unsafe) public class StarView : UIKit.UIView, UIKit.UIGestureRecognizerDelegate {
+  @objc @IBInspectable @_Concurrency.MainActor(unsafe) public var ratingCount: Swift.Int {
+    @objc get
+    @objc set
+  }
+  @objc @IBInspectable @_Concurrency.MainActor(unsafe) public var rating: CoreGraphics.CGFloat {
+    @objc get
+    @objc set
+  }
+  @objc deinit
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public func draw(_ rect: CoreGraphics.CGRect)
+  @_Concurrency.MainActor(unsafe) public func updateStar()
+}
+extension UIKit.UIView {
+  @_Concurrency.MainActor(unsafe) public func configureShadow(offset: CoreGraphics.CGSize = CGSize(width: 0.0, height: 2.0), radius: CoreGraphics.CGFloat = 6.0, opacity: Swift.Float = 0.12, shouldRasterize: Swift.Bool = false)
+}
+extension UIKit.UIDevice {
+  @_Concurrency.MainActor(unsafe) public func getCPUName() -> Swift.String
+  @_Concurrency.MainActor(unsafe) public func getCPUSpeed() -> Swift.String
+  @_Concurrency.MainActor(unsafe) public func getMachine() -> Swift.String
+}
+@objc public enum LocalizationKeys : Swift.Int, Swift.RawRepresentable {
+  case welcomeMessageTitle
+  case welcomeMessageContentNone
+  case welcomeMessageContentShake
+  case welcomeMessageContentSwipe
+  case welcomeMessageLogoLabel
+  case welcomeMessageCloseButtonTitle
+  case commentFieldPlaceholderForBugReport
+  case addImageFromGallery
+  case maxAttachementCountReached
+  case maxAttachementSizeReached
+  case feedbackScreenAttachmentTitle
+  case feedbackScreenPrivacyPolicy
+  case feedbackScreenTitle
+  case feedbackScreenSendButtonTitle
+  case feedbackScreenDataUsePolicy
+  case feedbackScreenSmapiLogoLabel
+  case feedbackScreenAlert
+  case feedbackScreenOk
+  case editImageAttachImage
+  case editImageUndo
+  case feedbackScreenRequired
+  case feedbackScreenDescriptionTitle
+  case feedbackScreenDescriptionPlaceholder
+  case feedbackScreenAttachmentSubTitle
+  case feedbackScreenMaxDescriptionCharacters
+  case feedbackScreenCharactersCount
+  case quickActionTitle
+  case quickActionSubTitle
+  case quickActionCloseButtonTitle
+  case editImageTitle
+  case editImageNavBarTitle
+  case webViewTitle
+  case ratingTitle
+  case ratingSubTitle
+  case submit
+  case notNow
+  case thankYou
+  case ratingFeedback
+  public typealias RawValue = Swift.String
+  public var rawValue: SecLibFramework.LocalizationKeys.RawValue {
+    get
+  }
+  public init?(rawValue: SecLibFramework.LocalizationKeys.RawValue)
+}
+@_inheritsConvenienceInitializers @objc(EventModel) public class EventModel : CoreData.NSManagedObject {
+  @objc override dynamic public init(entity: CoreData.NSEntityDescription, insertInto context: CoreData.NSManagedObjectContext?)
+  @objc deinit
+}
+extension SecLibFramework.EventModel {
+  @nonobjc public class func fetchRequest() -> CoreData.NSFetchRequest<SecLibFramework.EventModel>
+  @objc @NSManaged dynamic public var payload: Foundation.Data? {
+    @objc get
+    @objc set
+  }
+  @objc @NSManaged dynamic public var timestamp: Swift.Int64 {
+    @objc get
+    @objc set
+  }
+  @objc @NSManaged dynamic public var transactionID: Swift.String? {
+    @objc get
+    @objc set
+  }
+}
+extension SecLibFramework.EnvironmentType : Swift.Equatable {}
+extension SecLibFramework.EnvironmentType : Swift.Hashable {}
+extension SecLibFramework.Language : Swift.Equatable {}
+extension SecLibFramework.Language : Swift.Hashable {}
+extension SecLibFramework.EventCategory : Swift.Equatable {}
+extension SecLibFramework.EventCategory : Swift.Hashable {}
+extension SecLibFramework.InvocationEvent : Swift.Equatable {}
+extension SecLibFramework.InvocationEvent : Swift.Hashable {}
+extension SecLibFramework.HTTPMethod : Swift.Equatable {}
+extension SecLibFramework.HTTPMethod : Swift.Hashable {}
+extension SecLibFramework.LocalizationKeys : Swift.Equatable {}
+extension SecLibFramework.LocalizationKeys : Swift.Hashable {}

@@ -23,7 +23,7 @@ Start by taking a look at the example project provided in this Repo.
 We use CocoaPods as dependency management tool, for a easy integration of the SDK you must guarantee the VPartnerLib pod are part of your `Podfile`:
 
 ```ruby
-  pod 'VPartnerLib', '~> 2.1.0'
+  pod 'VPartnerLib', :git => 'https://github.com/squadk-celfocus/public-partner-sdk-example-ios', :tag => '3.0.0'
 ```
 
 You are required to use Cocoapods 1.11.0 or newer.
@@ -58,8 +58,9 @@ Please refer to `ViewController.swift` to check the function calls you'll requir
     ///   - productCode: Code of the Product - required
     ///   - appIconName: Name of the image that partner wants to display on splashscreen - optional (default - nil)
     ///   - sponsorIconName: Name of the sponsor image that partner wants to display on splashscreen - optional (default - Connected by Vodafone white logo)
-    ///   - Locale: Country code used for Terms & Conditions/Privacy & Policy URLs, before the IDTM Login (OPTIONS: uk, de, es, it, ze) (default - SIM card locale)
-    public func requiredSetup(clientID: String, grantID: String, partnerCode: String, productCode: String, appIconName: String? = nil, sponsorIconName: String? = nil, locale: String? = nil)
+    ///   - VisualMode: Visual mode of SDK (OPTIONS: LightMode or DarkMode) (default/nil - follow device user settings)
+    ///   - Locale: Country code used for Terms & Conditions/Privacy & Policy URLs, before the IDTM Login (OPTIONS: gb, de, es, it, ze) (default - SIM card locale)
+    public func requiredSetup(clientID: String, grantID: String, partnerCode: String, productCode: String, appIconName: String? = nil, sponsorIconName: String? = nil, locale: String? = nil, visualMode: VisualMode? = nil)
     
     /// Required setup of the mandatory fields
     /// - Parameters:
@@ -68,12 +69,9 @@ Please refer to `ViewController.swift` to check the function calls you'll requir
     ///   - productCode: Code of the Product - required
     ///   - appIconName: Name of the image that partner wants to display on splashscreen - optional (default - nil)
     ///   - sponsorIconName: Name of the sponsor image that partner wants to display on splashscreen - optional (default - Connected by Vodafone white logo)
+    ///   - VisualMode: Visual mode of SDK (OPTIONS: LightMode or DarkMode) (default/nil - follow device user settings)
     ///   - Locale: Country code used for Terms & Conditions/Privacy & Policy URLs, before the IDTM Login (OPTIONS: uk, de, es, it, ze) (default - SIM card locale)
-    public func requiredSetup(partnerPassword: String, partnerCode: String, productCode: String, appIconName: String? = nil, sponsorIconName: String? = nil, locale: String? = nil)
-    
-    /// Configure a local theme
-    /// - Parameter designConfig: the design theme if no design is passed it will accept the default
-    public func configure(designConfig: VPartnerLib.ConfigurationsDesign = ConfigurationsDesign.defaultDesignConfiguration)
+    public func requiredSetup(partnerPassword: String, partnerCode: String, productCode: String, appIconName: String? = nil, sponsorIconName: String? = nil, locale: String? = nil, visualMode: VisualMode? = nil)
     
     /// Logout user
     /// - Returns: Boolean indicating if the logout from IDTM was successful or not
@@ -83,21 +81,6 @@ Please refer to `ViewController.swift` to check the function calls you'll requir
     /// - Returns: Entry point controller
     @available(*, deprecated, message: "That function will be deprecated in new SDK versions, substituted for manageSubscriptions function with UIViewController parameter.")
     public func buildManageSubscriptionsViewController() -> UIViewController
-    
-    /// Build a entry point skipping the isn't of the device, already sent in the parameter
-    /// - Parameter productID: product id to register
-    /// - Parameter callback: the status of the Onboarding
-    /// - OnboardingResponse: (success, pending or fail)
-    /// - Returns: Entry point controller
-    @available(*, deprecated, message: "That function will be deprecated in new SDK versions, substituted for manageSubscriptions function with UIViewController parameter.")
-    public func buildAddDeviceViewController(productID: String, completion: @escaping VPartnerLib.OnboardingCompletionHandler) -> UIViewController
-    
-    /// Build entry point to add manually the device
-    /// - Parameter callback: the status of the Onboarding
-    /// - OnboardingResponse: (success, pending or fail)
-    /// - Returns: Entry point controller
-    @available(*, deprecated, message: "That function will be deprecated in new SDK versions, substituted for manageSubscriptions function with UIViewController parameter.")
-    public func buildAddDeviceViewController(completion: @escaping VPartnerLib.OnboardingCompletionHandler) -> UIViewController
     
     /// Build entry point to add manually the device
     /// - Parameter vc: UIViewController that will be used to initialise the SDK

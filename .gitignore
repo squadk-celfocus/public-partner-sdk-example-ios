@@ -99,3 +99,5 @@ PartnerIntegration.xcworkspace/xcuserdata/*
 PartnerIntegration.xcworkspace/xcshareddata/*
 PartnerIntegration/Support Files/GoogleService-Info.plist
 
+# Mac OS X
+*.DS_Store
