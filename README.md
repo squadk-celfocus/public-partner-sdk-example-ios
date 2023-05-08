@@ -23,7 +23,7 @@ Start by taking a look at the example project provided in this Repo.
 We use CocoaPods as dependency management tool, for a easy integration of the SDK you must guarantee the VPartnerLib pod are part of your `Podfile`:
 
 ```ruby
-  pod 'VPartnerLib', '~> 3.0.0'
+  pod 'VPartnerLib', :git => 'https://github.com/squadk-celfocus/public-partner-sdk-example-ios', :branch => 'main'
 ```
 
 You are required to use Cocoapods 1.11.0 or newer.
