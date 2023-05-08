@@ -30,8 +30,8 @@ Pod::Spec.new do |spec|
   spec.dependency 'ReactiveSwift', '~> 6.1'
   spec.dependency 'ASN1Decoder'
   spec.dependency 'PhoneNumberKit', '~> 3.3'
-  spec.dependency 'Firebase/Core'
-  spec.dependency 'Firebase/Installations'
-  spec.dependency 'Firebase/Messaging'
+  spec.dependency 'Firebase/Core', '~> 8.10.0'
+  spec.dependency 'Firebase/Installations', '~> 8.10.0'
+  spec.dependency 'Firebase/Messaging', '~> 8.10.0'
   spec.dependency 'JumioMobileSDK', '~>3.7.1'
 end
